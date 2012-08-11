@@ -1,0 +1,88 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script src="/static/js/jquery.min.js"></script>
+<link type="text/css" rel="stylesheet"
+	href="/static/bootstrap/css/bootstrap.css" />
+<link type="text/css" rel="stylesheet"
+	href="/static/bootstrap/css/bootstrap-responsive.css" />
+<script src="/static/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="navbar navbar-fixed-top">
+		<div class="navbar-inner alert-info">
+			<div class="container">
+				<ul class="nav">
+					<li class="active"><a href='#'>主页</a></li>
+					<li><a href='#'>最新TAG：</a></li>
+				</ul>
+				<ul class="nav pull-right">
+					<li class="dropdown"><a class="dropdown-toggle"
+						data-toggle="dropdown" href="#"> 我的信息<span class="caret"></span>
+					</a>
+						<ul class="dropdown-menu">
+							<li><a href='#'>我的marks</a></li>
+							<li><a href='#'>账户设置</a></li>
+						</ul></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div id="main_page">
+			<div class="page-header"></div>
+			<div class="alert alert-block alert-info">
+				<h4 class="alert-heading">Welcome!</h4>
+				<ul>
+					<li>Free to usage! <a href="/account/signup/">Signup now!</a></li>
+					<li>Manage your bookmarks with tags online.</li>
+					<li>It can import the bookmarks from Firefox, Safari, Chrome,
+						etc.</li>
+					<li>It can import the bookmarks from google bookmark,
+						delicious, etc</li>
+					<li>It can export the bookmarks for Firefox, Safari, Chrome
+						and google, delicious, etc</li>
+				</ul>
+			</div>
+			<div class="page-header">
+				<h3>最热tag</h3>
+			</div>
+			<ul class="thumbnails">
+				{% for hotTag in hotTagList %}
+					<li class="span3">
+						<a href="">{{hotTag.tagName}}</a>（{{hotTag.marksNum}}）
+					</li>
+				{% endfor %}
+			</ul>
+			<div class="page-header">
+				<h3>最新marks</h3>
+			</div>
+			<ul class="thumbnails">
+				{% for lastMark in lastMarkList %}
+					<li class="span3">
+						<a class="thumbnail"  href="{{lastMark.url}}"  target="_blank">
+							<img src='#' title="{{lastMark.url}}">
+							<div class="caption">{{lastMark.title}}</div>
+						</a>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+	<div id="footer">
+		<div class="inner">
+			<div class="container">
+				<div class="legal">
+					<hr />
+					<div>
+						<a href="http://www.weibo.com/lettoo">新浪微博</a> | <a
+							href="http://www.weibo.com/lettoo">腾讯微博</a>
+					</div>
+					<div class="legal">&copy; 2012 ananroad@gmail.com</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
