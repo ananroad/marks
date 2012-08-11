@@ -19,6 +19,7 @@ urlpatterns = patterns('',
     #url(r'^$', 'django.views.generic.simple.direct_to_template', {'template':'index.html'}),
    # url(r'^$', 'django.views.generic.simple.direct_to_template', 'webmarks.views.lastMarkList'),
     url(r'^$','webmarks.views.markindex'),
+    
     #
     url(r'^static/(?P<path>.*)$','django.views.static.serve',{'document_root':settings.STATIC_PATH}),
 )
